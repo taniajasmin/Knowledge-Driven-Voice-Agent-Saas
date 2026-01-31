@@ -8,3 +8,4 @@ openai
 
 textract
 pywin32
+numpy
