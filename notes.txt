@@ -1,0 +1,21 @@
+Twilio flow:
+    Call starts
+    → Say greeting from script.txt
+    → Listen to caller
+    → Send speech text to /ask
+    → Speak the answer
+    → Listen again (loop)
+
+
+In twilio console, setup:
+    In Twilio console → Phone Numbers → Voice
+
+    Set webhook:
+        POST https://your-ngrok-url.ngrok-free.app/voice
+
+Twilio setup (important)
+
+    In Twilio → Voice → Status Callback URL:
+    POST https://your-ngrok-url/call-end
+
+Trigger on: completed
