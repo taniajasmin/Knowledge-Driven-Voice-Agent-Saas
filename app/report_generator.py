@@ -1,5 +1,8 @@
 import os
 from openai import OpenAI
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def generate_ai_report(raw_text: str) -> str:
     client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))

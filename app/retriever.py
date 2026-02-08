@@ -42,7 +42,9 @@
 import os
 from openai import OpenAI
 import numpy as np
+from dotenv import load_dotenv
 
+load_dotenv()
 
 def chunk_text(text, chunk_size=500):
     chunks = []

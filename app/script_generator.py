@@ -1,5 +1,8 @@
 import os
 from openai import OpenAI
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 def generate_voice_script(ai_report_text: str) -> str:

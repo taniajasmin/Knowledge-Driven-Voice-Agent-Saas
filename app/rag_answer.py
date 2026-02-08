@@ -1,6 +1,9 @@
 import os
 from openai import OpenAI
 from app.retriever import find_relevant_chunk
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 def generate_answer(question: str, report_path: str, script_path: str) -> str:

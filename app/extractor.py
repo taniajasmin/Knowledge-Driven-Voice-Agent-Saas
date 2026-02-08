@@ -60,7 +60,7 @@ def extract_text(file_path: str) -> str:
 
     ext = os.path.splitext(file_path)[1].lower()
 
-    # -------- PDF --------
+    # PDF
     if ext == ".pdf":
         reader = PdfReader(file_path)
         text = ""
@@ -68,11 +68,11 @@ def extract_text(file_path: str) -> str:
             text += page.extract_text() + "\n"
         return text
 
-    # -------- DOCX --------
+    # DOCX
     if ext == ".docx":
         return extract_text_from_docx(file_path)
 
-    # -------- DOC (convert first) --------
+    # DOC (convert first)
     if ext == ".doc":
         converted_path = convert_doc_to_docx(file_path)
         return extract_text_from_docx(converted_path)

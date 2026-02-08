@@ -11,11 +11,23 @@ In twilio console, setup:
     In Twilio console → Phone Numbers → Voice
 
     Set webhook:
-        POST https://your-ngrok-url.ngrok-free.app/voice
+        POST https://pluckiest-trimorphous-ivana.ngrok-free.dev/voice
 
 Twilio setup (important)
 
     In Twilio → Voice → Status Callback URL:
-    POST https://your-ngrok-url/call-end
+    POST https://pluckiest-trimorphous-ivana.ngrok-free.dev/call-end
 
 Trigger on: completed
+
+
+https://pluckiest-trimorphous-ivana.ngrok-free.dev
+
+ngrok http 8000
+
+
+{
+  "question": "How long does international shipping take?",
+  "report_file": "reports/ABC Delivery Service.pdf_report.txt",
+  "script_file": "reports/ABC Delivery Service.pdf_script.txt"
+}
