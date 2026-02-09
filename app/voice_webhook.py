@@ -79,9 +79,11 @@ import os
 import requests
 from fastapi import Request
 from twilio.twiml.voice_response import VoiceResponse
+from fastapi.responses import Response
 
 from app.transcript_store import add_line
 from dotenv import load_dotenv
+from app.rag_answer import generate_answer
 
 load_dotenv()
 
@@ -110,7 +112,9 @@ async def voice_entry(request: Request):
         speechTimeout="auto"
     )
 
-    return str(vr)
+    # return str(vr)
+    return Response(content=str(vr), media_type="text/xml")
+
 
 
 async def voice_process(request: Request):
@@ -122,12 +126,18 @@ async def voice_process(request: Request):
     add_line(call_id, "User", user_speech)
 
     # Call RAG endpoint
-    response = requests.post(
-        f"{BASE_URL}/ask/",
-        json={"question": user_speech}
+    # response = requests.post(
+    #     f"{BASE_URL}/ask/",
+    #     json={"question": user_speech}
+    # )
+
+    # ai_answer = response.json().get("answer")
+    ai_answer = generate_answer(
+        user_speech,
+        "reports/current_report.txt",
+        "reports/current_script.txt"
     )
 
-    ai_answer = response.json().get("answer", "Let me check that for you.")
 
     add_line(call_id, "AI", ai_answer)
 
@@ -140,4 +150,5 @@ async def voice_process(request: Request):
         speechTimeout="auto"
     )
 
-    return str(vr)
+    # return str(vr)
+    return Response(content=str(vr), media_type="text/xml")

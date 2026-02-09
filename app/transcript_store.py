@@ -1,18 +1,41 @@
-# Stores live transcript in memory during call
-live_calls = {}
+# # Stores live transcript in memory during call
+# live_calls = {}
+
+
+# def add_line(call_id: str, speaker: str, text: str):
+#     if call_id not in live_calls:
+#         live_calls[call_id] = []
+
+#     live_calls[call_id].append(f"{speaker}: {text}")
+
+
+# def get_transcript(call_id: str):
+#     return "\n".join(live_calls.get(call_id, []))
+
+
+# def clear_call(call_id: str):
+#     if call_id in live_calls:
+#         del live_calls[call_id]
+
+
+
+from collections import defaultdict
+
+# Global memory for active calls
+CALL_TRANSCRIPTS = defaultdict(list)
 
 
 def add_line(call_id: str, speaker: str, text: str):
-    if call_id not in live_calls:
-        live_calls[call_id] = []
-
-    live_calls[call_id].append(f"{speaker}: {text}")
+    """Add a line to the call transcript."""
+    CALL_TRANSCRIPTS[call_id].append(f"{speaker}: {text}")
 
 
-def get_transcript(call_id: str):
-    return "\n".join(live_calls.get(call_id, []))
+def get_transcript(call_id: str) -> str:
+    """Return full transcript as string."""
+    return "\n".join(CALL_TRANSCRIPTS.get(call_id, []))
 
 
 def clear_call(call_id: str):
-    if call_id in live_calls:
-        del live_calls[call_id]
+    """Remove transcript after call ends."""
+    if call_id in CALL_TRANSCRIPTS:
+        del CALL_TRANSCRIPTS[call_id]
