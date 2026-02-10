@@ -113,6 +113,8 @@ from app.extractor import extract_text
 from app.report_generator import generate_ai_report
 from app.script_generator import generate_voice_script
 from app.rag_answer import generate_answer
+from fastapi.responses import Response
+from twilio.twiml.voice_response import VoiceResponse
 
 from app.voice_webhook import voice_entry, voice_process
 from app.transcript_store import get_transcript, clear_call
@@ -211,3 +213,11 @@ async def call_end(request: Request):
 @app.get("/live-transcript/{call_id}")
 async def live_transcript(call_id: str):
     return {"transcript": get_transcript(call_id)}
+
+# ------------------ TWILIO ENTRY (bypass ngrok warning) ------------------
+
+@app.api_route("/twilio-entry", methods=["GET", "POST"])
+def twilio_entry():
+    vr = VoiceResponse()
+    vr.redirect("/voice")
+    return Response(content=str(vr), media_type="text/xml")

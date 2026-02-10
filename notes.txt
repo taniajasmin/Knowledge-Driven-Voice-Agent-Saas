@@ -31,3 +31,6 @@ ngrok http 8000
   "report_file": "reports/ABC Delivery Service.pdf_report.txt",
   "script_file": "reports/ABC Delivery Service.pdf_script.txt"
 }
+
+
+ngrok http 8000 --request-header-add="ngrok-skip-browser-warning:true"
