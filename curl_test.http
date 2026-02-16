@@ -7,5 +7,5 @@
 
 
 curl -X POST http://127.0.0.1:8000/voice-process \
-  -d "SpeechResult=How long does shipping take?" \
+  -d "SpeechResult=Can I get a refund?" \
   -d "CallSid=CA111"
