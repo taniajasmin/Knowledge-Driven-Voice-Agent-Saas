@@ -1,0 +1,11 @@
+CALL ID: CAae0baa4f9bee17b46427313fef912819
+DATE: 2026-02-09
+DURATION: 1m 2s
+
+AI: Hello! Thank you for calling ABC Delivery Service.
+
+User: What are your working hours?
+
+AI: Our customer support operates from 9 AM to 9 PM daily.
+
+User: 

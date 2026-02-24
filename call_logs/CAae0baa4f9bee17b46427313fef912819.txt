@@ -1,0 +1,21 @@
+CALL ID: CAae0baa4f9bee17b46427313fef912819
+DATE: 2026-02-09
+DURATION: 2m 12s
+
+AI: Hello! Thank you for calling ABC Delivery Service. How can I assist you today?
+
+User: How long shipping takes?
+
+AI: Are you asking about local delivery within the city or international shipping?
+
+User: International shipping.
+
+AI: International shipping delivery times vary depending on destination country and customs processing. Typically it takes between 5 to 10 business days.
+
+User: Do you offer same day delivery?
+
+AI: Yes, same day delivery is available for locations within the city.
+
+User: Okay thank you.
+
+AI: You're welcome. Have a great day.

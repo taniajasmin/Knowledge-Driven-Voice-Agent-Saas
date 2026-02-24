@@ -1,1 +1,17 @@
-Sure! Please provide the details of the conversation you would like me to summarize.
+CALL SUMMARY
+
+Customer Intent:
+Customer asked about shipping duration and delivery options.
+
+Topics Discussed:
+- International shipping timelines
+- Same-day local delivery availability
+
+Customer Sentiment:
+Neutral to positive.
+
+Outcome:
+Customer received required information successfully.
+
+Recommended Follow-up:
+No follow-up required.
